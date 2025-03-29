@@ -1,0 +1,11 @@
+{
+  "cSpell.words": [
+    "kingnet",
+    "VITE"
+  ],
+  "i18n-ally.localesPaths": ["src/locales"],
+  "i18n-ally.displayLanguage": "zh-TW",
+  "i18n-ally.namespace": true,
+  "i18n-ally.pathMatcher": "lang/{locale}/{namespace}.json",
+  "i18n-ally.dirStructure": "file",
+}

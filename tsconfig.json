@@ -1,0 +1,31 @@
+{
+  "compilerOptions": {
+    "composite": true,
+    "target": "ES2020",
+    "useDefineForClassFields": true,
+    "module": "ESNext",
+    "lib": ["ES2020", "DOM", "DOM.Iterable"],
+    "skipLibCheck": true,
+    "baseUrl": ".",
+    "resolveJsonModule": true,
+    "paths": {
+      "@/*": ["src/*"]
+    },
+
+    /* Bundler mode */
+    "moduleResolution": "Node",
+    "allowSyntheticDefaultImports": true,
+    "isolatedModules": true,
+    "moduleDetection": "force",
+    "noEmit": true,
+    "jsx": "preserve",
+
+    /* Linting */
+    "strict": true, // 開啟 TypeScript 的所有嚴格模式
+    "noUnusedLocals": true, // 若變數未使用會報錯
+    "noUnusedParameters": true, // 若函數參數未使用會報錯
+    "noFallthroughCasesInSwitch": true, // switch 沒 break 會報錯
+    "noImplicitAny": true // 若未指定型別 TypeScript 為自動推斷為 any，此設定強制所以變量都需有指定型別，避免隱式 any
+  },
+  "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.vue", "vite.config.ts", "auto-imports.d.ts", ".eslintrc.cjs", "commitlint.config.js"]
+}

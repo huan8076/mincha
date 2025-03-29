@@ -1,0 +1,21 @@
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+- task: NodeTool@0
+  inputs:
+    versionSpec: '20.17.0'
+  displayName: 'Install Node.js'
+
+- script: |
+    npm i -g pnpm@9.9.0
+    pnpm install
+  displayName: '準備專案環境'
+
+- script: |
+    pnpm run lint:ci
+  displayName: 'Eslint 檢查'
+
+- script: |
+    pnpm run lint-style:ci
+  displayName: 'Stylelint 檢查'

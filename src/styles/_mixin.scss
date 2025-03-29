@@ -1,0 +1,36 @@
+// example file
+
+@mixin word-break-line1{  
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-line-clamp: 1;
+  word-break: break-all;
+  overflow-wrap: break-word;
+  -webkit-box-orient: vertical;
+}
+
+@mixin word-break-line2{
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-line-clamp: 2;
+  word-break: break-all;
+  overflow-wrap: break-word;
+  -webkit-box-orient: vertical;
+}
+
+@mixin word-break-line3{
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-line-clamp: 3;
+  word-break: break-all;
+  overflow-wrap: break-word;
+  -webkit-box-orient: vertical;
+}
+
+@mixin line-clamp($lineNum) {
+  display: -webkit-box;
+  overflow : hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: $lineNum;
+  -webkit-box-orient: vertical;
+}
