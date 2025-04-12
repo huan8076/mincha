@@ -14,9 +14,18 @@ const routes: RouteRecordRaw[] = [
     path: '/',
     name: 'home',
     meta: {
-      title: 'Home'
+      title: '首頁',
+      showFooter: true
     },
     component: async () => await import('@/views/index.vue')
+  },
+  {
+    path: '/login',
+    name: 'login',
+    meta: {
+      title: '登入'
+    },
+    component: async () => await import('@/views/login.vue')
   },
   notFoundRoute,
   ...managementFee,
@@ -31,6 +40,15 @@ const router = createRouter({
 })
 
 router.beforeEach((to) => {
+  // 檢查 localStorage 是否有 login 欄位
+  const isLoggedIn = localStorage.getItem('login')
+
+  // 如果沒有 login 欄位，且目標路徑不是 /login，則跳轉到 /login
+  if (!isLoggedIn && to.name !== 'login') {
+    return { name: 'login' }
+  }
+
+  // 設定頁面標題
   if (to.meta?.title && typeof to.meta.title === 'string') {
     document.title = to.meta.title
   } else if (import.meta.env.VITE_APP_NAME) {

@@ -1,6 +1,120 @@
 <template>
-  <div>
-    Index Page
+  <div id="index" class="page">
+    <q-header class="index__header">
+      <q-toolbar>
+        <q-icon name="menu" size="38px" />
+        <q-toolbar-title class="text-center">
+          <q-avatar>
+            <img src="https://cdn.quasar.dev/logo-v2/svg/logo-mono-white.svg">
+          </q-avatar>
+          Logo
+        </q-toolbar-title>
+        <q-icon name="search" size="38px" />
+      </q-toolbar>
+      <q-toolbar class="index__header-edge">
+        <q-toolbar-title>
+          <p>Good Morning</p>
+          <p>Huan!</p>
+        </q-toolbar-title>
+      </q-toolbar>
+    </q-header>
+    <div class="index__content">
+      <div class="row">
+        <div class="col-6 col--left">
+          <div class="menuCard menuCard--filled">
+            <div class="menuCard__icon">
+              <q-icon name="schedule" />
+            </div>
+            <div class="menuCard__content">
+              <p class="menuCard__title">
+                打卡
+              </p>
+              <p class="menuCard__desc">
+                別忘了上下班打卡
+              </p>
+            </div>
+            <div class="menuCard__bottomSide">
+              <q-icon name="start" />
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col--right">
+          <div class="menuCard menuCard--filled">
+            <div class="menuCard__icon">
+              <q-icon name="campaign" />
+            </div>
+            <div class="menuCard__content">
+              <p class="menuCard__title">
+                公告
+              </p>
+              <p class="menuCard__desc">
+                掌握公司最新消息
+              </p>
+            </div>
+            <div class="menuCard__bottomSide">
+              <q-icon name="start" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <div class="menuCard menuCard--filled">
+            <div class="menuCard__tag">#新手等級</div>
+            <div class="menuCard__icon">
+              <q-icon name="school" />
+            </div>
+            <div class="menuCard__content">
+              <p class="menuCard__title">
+                教育訓練
+              </p>
+              <p class="menuCard__desc">
+                完成指定訓練課程，升級等級
+              </p>
+            </div>
+            <div class="menuCard__bottomSide">
+              <q-icon name="start" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-6 col--left">
+          <div class="menuCard menuCard--outline">
+            <div class="row">
+              <div class="menuCard__icon">
+                <q-icon name="contactsupport" />
+              </div>
+              <div class="menuCard__content">
+                <p class="menuCard__title">
+                  AI助手
+                </p>
+                <p class="menuCard__desc">
+                  協助解答與操作指引
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col--right">
+          <div class="menuCard menuCard--outline">
+            <div class="row">
+              <div class="menuCard__icon">
+                <q-icon name="analytics" />
+              </div>
+              <div class="menuCard__content">
+                <p class="menuCard__title">
+                  數據圖表
+                </p>
+                <p class="menuCard__desc">
+                  查看個人績效與統計
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -9,21 +123,99 @@
 </script>
 
 <style lang="scss" scoped>
-div {
-  color: $SystemPrimary;
-}
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  transition: filter 300ms;
-  will-change: filter;
+.index__header {
+  background-color: transparent;
 
-  &:hover {
-    filter: drop-shadow(0 0 2em #646cffaa);
+  .q-toolbar {
+    background-color: $SystemPrimary;
   }
 
-  &.vue:hover {
-    filter: drop-shadow(0 0 2em #42b883aa);
+  .index__header-edge {
+    height: 120px;
+    padding: 20px;
+    border-radius: 0 0 25px 25px;
+    align-items: flex-start;
+  }
+}
+
+.index__content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 20px 30px;
+
+  .row {
+    width: 100%;
+
+    .col--left {
+      padding-right: 10px;
+    }
+
+    .col--right {
+      padding-left: 10px;
+    }
+  }
+
+  .menuCard {
+    position: relative;
+    width: 100%;
+    padding: 12px 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+
+    .menuCard__tag {
+      position: absolute;
+      top: 12px;
+      right: 24px;
+      padding: 4px 8px;
+      border-radius: 12px;
+      background-color: #a8f7b9;
+      color: #046319;
+    }
+
+    .menuCard__icon {
+      margin-right: 8px;
+      font-size: 50px;
+    }
+
+    .menuCard__content {
+      padding: 4px 0;
+    }
+
+    .menuCard__title {
+      font-size: 24px;
+      line-height: 1.5;
+      font-weight: bold;
+    }
+
+    .menuCard__desc {
+      font-size: 14px;
+      line-height: 1.2;
+    }
+
+    .menuCard__bottomSide {
+      display: flex;
+      justify-content: flex-end;
+      padding: 4px 0;
+
+      .q-icon {
+        font-size: 30px;
+      }
+    }
+
+  }
+
+  .menuCard.menuCard--filled {
+    //實心藍底卡片
+    background-color: $SystemPrimary;
+    color: $SystemWhite;
+  }
+
+  .menuCard.menuCard--outline {
+    //空心藍框卡片
+    border: 1px solid $SystemPrimary;
+    color: $SystemPrimary;
+    ;
   }
 }
 </style>

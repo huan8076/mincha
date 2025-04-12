@@ -15,7 +15,7 @@ export default (e: ConfigEnv) => {
     // https://github.com/quasarframework/quasar/blob/dev/vite-plugin/index.d.ts
     quasar({
       sassVariables: fileURLToPath(
-        new URL('./src/quasar-variables.sass', import.meta.url)
+        new URL('./src/styles/quasar-variables.sass', import.meta.url)
       )
     }),
     AutoImport({
