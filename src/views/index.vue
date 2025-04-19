@@ -2,14 +2,14 @@
   <div id="index" class="page">
     <q-header class="index__header">
       <q-toolbar>
-        <q-icon name="menu" size="38px" />
+        <q-icon name="menu" class="cursor-pointer" size="38px" />
         <q-toolbar-title class="text-center">
           <q-avatar>
             <img src="https://cdn.quasar.dev/logo-v2/svg/logo-mono-white.svg">
           </q-avatar>
           Logo
         </q-toolbar-title>
-        <q-icon name="search" size="38px" />
+        <q-icon name="search" size="38px" @click="onLogout" />
       </q-toolbar>
       <q-toolbar class="index__header-edge">
         <q-toolbar-title>
@@ -119,6 +119,24 @@
 </template>
 
 <script setup lang="ts">
+const router = useRouter()
+
+/**
+ * 登出功能
+ * 清除 localStorage 中的 loginData，並跳轉到登入頁
+ */
+const onLogout = async (): Promise<void> => {
+  try {
+    // 清除 localStorage 中的 loginData
+    localStorage.removeItem('loginData')
+
+    // 跳轉到登入頁
+    await router.push('/login')
+  } catch (error) {
+    // 錯誤處理，這裡可以使用 Quasar 的通知元件顯示錯誤訊息
+    console.error('登出失敗:', error)
+  }
+}
 
 </script>
 
@@ -162,6 +180,7 @@
     padding: 12px 20px;
     margin-bottom: 20px;
     border-radius: 5px;
+    cursor: pointer;
 
     .menuCard__tag {
       position: absolute;

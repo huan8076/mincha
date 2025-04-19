@@ -6,7 +6,7 @@ import i18n from './locales'
 import './types/axios.d.ts'
 
 // Quasar
-import { Quasar } from 'quasar'
+import { Quasar, Notify } from 'quasar'
 import 'quasar/src/css/index.sass' // Quasar css
 import '@quasar/extras/material-icons/material-icons.css' // 引入 icon 套件（Material Icons）
 import quasarLang from 'quasar/lang/zh-TW'
@@ -21,7 +21,12 @@ app.use(store)
 app.use(router)
 app.use(i18n)
 app.use(Quasar, {
-  plugins: {}, // import Quasar plugins and add here
+  plugins: {
+    Notify
+  }, // import Quasar plugins and add here
+  config: {
+    notify: {}
+  },
   lang: quasarLang
 })
 

@@ -7,6 +7,10 @@
   display: none;
 }
 
+input::placeholder {
+  color: #3c2d2d !important;
+}
+
 body {
   width: 100%;
   max-width: 768px;

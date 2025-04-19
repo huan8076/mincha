@@ -32,6 +32,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  cursor: pointer;
 
   span {
     margin-top: 2px;

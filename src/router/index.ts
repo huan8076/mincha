@@ -25,7 +25,7 @@ const routes: RouteRecordRaw[] = [
     meta: {
       title: '登入'
     },
-    component: async () => await import('@/views/login.vue')
+    component: async () => await import('@/views/Login.vue')
   },
   notFoundRoute,
   ...managementFee,
@@ -41,7 +41,7 @@ const router = createRouter({
 
 router.beforeEach((to) => {
   // 檢查 localStorage 是否有 login 欄位
-  const isLoggedIn = localStorage.getItem('login')
+  const isLoggedIn = localStorage.getItem('loginData')
 
   // 如果沒有 login 欄位，且目標路徑不是 /login，則跳轉到 /login
   if (!isLoggedIn && to.name !== 'login') {
