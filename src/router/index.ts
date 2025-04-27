@@ -30,7 +30,7 @@ const routes: RouteRecordRaw[] = [
 ]
 
 const router = createRouter({
-  history: createWebHistory(),
+  history: createWebHistory('/mincha/'),
   routes,
   scrollBehavior: () => ({ left: 0, top: 0 })
 })

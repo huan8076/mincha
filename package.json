@@ -21,7 +21,7 @@
     "lint-style:ci": "stylelint --quiet \"src/**/*.{vue,less,postcss,css,scss}\"",
     "lint-style:fix": "stylelint \"src/**/*.{vue,less,postcss,css,scss}\" --fix",
     "prepare": "husky install",
-    "deploy": "pnpm run build:prod && gh-pages -d dist"
+    "deploy": "pnpm run build:prod && gh-pages -d dist -r https://github.com/huan8076/mincha.git"
   },
   "engines": {
     "node": "20.17.0",
