@@ -24,3 +24,16 @@ body {
   width: 100%;
   margin: 0 auto;
 }
+
+.q-page-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background-color: $SystemGray;
+  overflow: auto;
+
+  .page {
+    height: 100%;
+    overflow: auto;
+  }
+}

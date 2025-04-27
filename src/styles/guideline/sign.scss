@@ -1,0 +1,11 @@
+.tag {
+  display: inline-block;
+  font-size: 15px;
+  padding: 4px 8px;
+  border-radius: 12px;
+  
+  &.primary {
+    background-color: #B8D8B8;
+    color: #2E7D32;
+  }
+}

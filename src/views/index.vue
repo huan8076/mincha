@@ -1,5 +1,5 @@
 <template>
-  <div id="index" class="page">
+  <q-page-container id="index">
     <q-header class="index__header">
       <q-toolbar>
         <q-icon name="menu" class="cursor-pointer" size="38px" />
@@ -11,14 +11,14 @@
         </q-toolbar-title>
         <q-icon name="search" size="38px" @click="onLogout" />
       </q-toolbar>
-      <q-toolbar class="index__header-edge">
+      <q-toolbar class="index__header__edge">
         <q-toolbar-title>
           <p>Good Morning</p>
           <p>Huan!</p>
         </q-toolbar-title>
       </q-toolbar>
     </q-header>
-    <div class="index__content">
+    <div class="index__content page">
       <div class="row">
         <div class="col-6 col--left">
           <div class="menuCard menuCard--filled">
@@ -59,8 +59,8 @@
       </div>
       <div class="row">
         <div class="col">
-          <div class="menuCard menuCard--filled">
-            <div class="menuCard__tag">#新手等級</div>
+          <div class="menuCard menuCard--filled" @click="router.push('/educationTraining/')">
+            <div class="menuCard__tag tag primary">#新手等級</div>
             <div class="menuCard__icon">
               <q-icon name="school" />
             </div>
@@ -115,7 +115,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </q-page-container>
 </template>
 
 <script setup lang="ts">
@@ -141,6 +141,9 @@ const onLogout = async (): Promise<void> => {
 </script>
 
 <style lang="scss" scoped>
+.q-page-container {
+  background-color: #FFF;
+}
 .index__header {
   background-color: transparent;
 
@@ -148,7 +151,7 @@ const onLogout = async (): Promise<void> => {
     background-color: $SystemPrimary;
   }
 
-  .index__header-edge {
+  .index__header__edge {
     height: 120px;
     padding: 20px;
     border-radius: 0 0 25px 25px;
@@ -186,10 +189,6 @@ const onLogout = async (): Promise<void> => {
       position: absolute;
       top: 12px;
       right: 24px;
-      padding: 4px 8px;
-      border-radius: 12px;
-      background-color: #a8f7b9;
-      color: #046319;
     }
 
     .menuCard__icon {

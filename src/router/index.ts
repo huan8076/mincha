@@ -1,7 +1,5 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
-import managementFee from './routes/managementFee'
-import managementFeeKGI from './routes/managementFeeKGI'
-import postal from './routes/postal'
+import educationTraining from './routes/educationTraining'
 
 const notFoundRoute: RouteRecordRaw = {
   path: '/:pathMatch(.*)*',
@@ -25,12 +23,10 @@ const routes: RouteRecordRaw[] = [
     meta: {
       title: '登入'
     },
-    component: async () => await import('@/views/Login.vue')
+    component: async () => await import('@/views/login/Login.vue')
   },
   notFoundRoute,
-  ...managementFee,
-  ...managementFeeKGI,
-  ...postal
+  ...educationTraining
 ]
 
 const router = createRouter({
