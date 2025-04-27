@@ -34,7 +34,7 @@ export default (e: ConfigEnv) => {
     })
   ]
   return defineConfig({
-    base: 'mincha',
+    base: '/mincha/',
     build: {
       sourcemap: true,
       terserOptions: {
