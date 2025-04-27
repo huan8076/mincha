@@ -1,9 +1,4 @@
-# RD-FrontEnd_Vue3_Web
-
-<font color=#ff0000>
-此為範本專案，使用時請移除該行敘述，以及專案內 example 資料夾 <br>
-詳細移除內容查看底下 <b>Template 注意事項</b>
-</font>
+# Mincha
 
 ## 目錄
 * [開發環境](#開發環境)
@@ -15,7 +10,6 @@
 * [專案結構](#專案結構)
 * [命名規範](#命名規範)
 * [注意事項](#注意事項)
-* [Template 注意事項](#template-注意事項)
 * [如何開始](#如何開始)
 * [發布](./docs/RELEASE.md)
 * [模組](./docs/MODULE.md)
