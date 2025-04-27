@@ -207,33 +207,3 @@ export interface CustomRequestConfig {
   handleMs?: number
   // 新增你需要的東西
 }
-
-```
-
-## Template 注意事項
-
-### 專案導入後需刪除或調整部分
-#### Readme
-1. 最上方 ```此為範本專案，使用時請移除該行敘述，以及專案內 example 資料夾...``` 提示文案移除
-2. 最下方的如何開始
-3. ```Template 注意事項``` 移除，包含：
-    * ```Template 注意事項``` 內容部分
-    * 目錄 ```Template 注意事項``` 超連結
-
-#### package.json
-1. ```name``` 改成專案名稱
-
-#### .env
-1. ```VITE_APP_NAME``` 為測試用，可移除
-
-
-#### file
-##### 以下皆僅為範例樣本，參考完之後即可移除
-1. 所有 ```example``` 的資料夾皆可移除
-2. ```stores > helloWorld.ts``` 可移除
-3. ```router > routes``` 底下範例可移除，若移除亦須同步移除 ```router > index.ts``` 裡的引用及配置
-4. ```components > HelloWorld.vue``` 可移除
-5. ```api > smartLifeCore``` 可移除
-
-## 如何開始
-[wiki 建立新專案](https://kingnetrd.visualstudio.com/RD-ProjectWorkItem/_wiki/wikis/RD-ProjectWorkItem.wiki/2727/-Vue3-Template-%E5%BB%BA%E7%AB%8B%E6%96%B0%E5%B0%88%E6%A1%88)
