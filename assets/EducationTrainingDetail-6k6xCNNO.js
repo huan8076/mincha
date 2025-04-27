@@ -1,0 +1,2 @@
+import{_ as t,V as o,a as e,w as a,o as c,Q as n,b as s}from"./index-DhEyAYhx.js";import{a as r,Q as i}from"./QHeader-D4rJnN14.js";const l={},_={id:"educationTrainingDetail",class:"page"};function d(u,f){return c(),o("div",_,[e(r,{class:""},{default:a(()=>[e(n,null,{default:a(()=>[e(s,{name:"menu",class:"cursor-pointer",size:"38px"}),e(i,{class:"text-center"}),e(s,{name:"search",size:"38px"})]),_:1})]),_:1})])}const x=t(l,[["render",d]]);export{x as default};
+//# sourceMappingURL=EducationTrainingDetail-6k6xCNNO.js.map
