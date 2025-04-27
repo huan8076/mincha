@@ -1,0 +1,26 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+echo "check node version"
+NOW_NODE_VERSION=$(node -v)
+echo "now node version:" $NOW_NODE_VERSION
+NODE_VERSION="20.17.0" # 預設環境版本號
+
+while read -r line || [[ -n "$line" ]] # npmrc 讀行
+do
+  if [[ $line == *"use-node-version="* ]] # 該行如果有 use-node-version 則取得預期版本
+  then
+    NODE_VERSION=$(echo "$line" | cut -d'=' -f 2) # 將該行以等號切割取得第二個值（版本號）
+  fi
+done < .npmrc
+echo "use node version:" $NODE_VERSION
+
+if [ $NOW_NODE_VERSION != "v$NODE_VERSION" ] # 如果當前環境不等於指定環境 則透過 nvm 切換環境
+then
+  export NVM_DIR="$HOME/.nvm"
+  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+  nvm use $NODE_VERSION
+fi
+
+echo "run lint-staged" # 只檢查提交的檔案
+npx lint-staged
