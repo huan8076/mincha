@@ -20,12 +20,12 @@
     </q-header>
     <div class="educationTrainingList__content page">
       <q-list>
-        <template v-for="(chapterItem, index) in chapterList" :key="index">
+        <template v-for="(courseItem, index) in courseList" :key="index">
           <education-training-item
-            :item-data="chapterItem"
-            @click="onChapterItemClick(chapterItem.id)"
+            :item-data="courseItem"
+            @click="onCourseItemClick(courseItem.id)"
           />
-          <q-separator v-if="index !== chapterList.length - 1" class="item__separator" spaced inset />
+          <q-separator v-if="index !== courseList.length - 1" class="item__separator" spaced inset />
         </template>
       </q-list>
     </div>
@@ -37,7 +37,7 @@ import { useRouter } from 'vue-router'
 import EducationTrainingItem from './components/EducationTrainingItem.vue'
 const router = useRouter()
 
-const chapterList = ref([
+const courseList = ref([
   {
     id: 1,
     title: '備料',
@@ -79,9 +79,9 @@ const chapterList = ref([
  * 處理章節項目點擊事件，導航至章節詳情頁
  * @param id - 被點擊項目的ID
  */
-const onChapterItemClick = (id: number) => {
+const onCourseItemClick = (id: number) => {
   router.push({
-    name: 'educationTrainingDetail',
+    name: 'educationTrainingCourse',
     params: { id: id.toString() }
   })
 }
