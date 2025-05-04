@@ -40,33 +40,38 @@ const router = useRouter()
 const chapterList = ref([
   {
     id: 1,
-    title: '新手訓練',
+    title: '備料',
     description: '新手訓練課程，讓你快速上手',
-    completed: true
+    completed: true,
+    image: new URL('@/assets/educationTraining/item_preparation.png', import.meta.url).href
   },
   {
     id: 2,
-    title: '進階訓練',
+    title: '櫃檯',
     description: '進階訓練課程，讓你更上一層樓',
-    completed: true
+    completed: true,
+    image: new URL('@/assets/educationTraining/item_counter.png', import.meta.url).href
   },
   {
     id: 3,
-    title: '專業訓練',
+    title: '開店＆閉店',
     description: '專業訓練課程，讓你成為行業專家',
-    completed: false
+    completed: false,
+    image: new URL('@/assets/educationTraining/item_open_close.png', import.meta.url).href
   },
   {
     id: 4,
-    title: '高級訓練',
+    title: '飲品',
     description: '高級訓練課程，讓你成為行業領袖',
-    completed: false
+    completed: false,
+    image: new URL('@/assets/educationTraining/item_beverage.png', import.meta.url).href
   },
   {
     id: 5,
-    title: '專家訓練',
+    title: '試吃',
     description: '專家訓練課程，讓你成為行業大師',
-    completed: false
+    completed: false,
+    image: new URL('@/assets/educationTraining/item_tasting.png', import.meta.url).href
   }
 ])
 

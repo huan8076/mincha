@@ -3,7 +3,7 @@
     <q-item-section center avatar>
       <div class="trainingItem__icon">
         <q-avatar>
-          <img src="https://cdn.quasar.dev/img/boy-avatar.png">
+          <img :src="itemData.image">
         </q-avatar>
       </div>
     </q-item-section>
