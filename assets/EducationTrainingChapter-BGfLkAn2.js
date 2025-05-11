@@ -1,0 +1,2 @@
+import{_ as t,V as r,a as e,w as a,o,Q as c,b as s}from"./index-1oR9MhYJ.js";import{a as n,Q as i}from"./QHeader-CRAhEVNt.js";const l={},_={id:"educationTrainingChapter",class:"page"};function d(p,u){return o(),r("div",_,[e(n,{class:""},{default:a(()=>[e(c,null,{default:a(()=>[e(s,{name:"menu",class:"cursor-pointer",size:"38px"}),e(i,{class:"text-center"}),e(s,{name:"search",size:"38px"})]),_:1})]),_:1})])}const x=t(l,[["render",d]]);export{x as default};
+//# sourceMappingURL=EducationTrainingChapter-BGfLkAn2.js.map
