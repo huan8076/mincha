@@ -31,6 +31,7 @@ interface ItemData {
   title: string
   description: string
   completed: boolean
+  image: string
 }
 
 // props
