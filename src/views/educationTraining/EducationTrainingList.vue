@@ -92,7 +92,7 @@ const onCourseItemClick = (id: number) => {
 #educationTrainingList {}
 
 .q-header.page__header {
-  height: 170px;
+  height: 180px;
   border-radius: 0 0 25px 25px;
   overflow: hidden;
 }
@@ -107,7 +107,7 @@ const onCourseItemClick = (id: number) => {
   position: absolute;
   top: 0;
   width: 100%;
-  height: 170px;
+  height: 180px;
   padding-top: 50px;
   z-index: 1;
 }
@@ -117,7 +117,7 @@ const onCourseItemClick = (id: number) => {
 }
 
 .page__header__edge__title {
-  font-size: 42px;
+  font-size: 40px;
   font-weight: bold;
   margin-bottom: 10px;
 }
