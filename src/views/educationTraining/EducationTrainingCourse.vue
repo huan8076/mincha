@@ -42,23 +42,43 @@
             <p>50 項實作檢核練習</p>
           </div>
         </div>
-        <div class="content__course__button">
+        <div class="content__course__button" @click="showBottomSheet = true">
           前往學習
         </div>
       </div>
     </div>
+
+    <q-dialog v-model="showBottomSheet" allow-focus-outside maximized position="bottom">
+      <education-training-course-popup @close="onCloseDialog" @click-chapter-item="onClickChapterItem" />
+    </q-dialog>
   </q-page-container>
 </template>
 
 <script setup lang="ts">
 import { useRouter } from 'vue-router'
+import EducationTrainingCoursePopup from './components/EducationTrainingCoursePopup.vue'
 const router = useRouter()
+
+const showBottomSheet = ref(false)
+
+const onCloseDialog = (): void => {
+  showBottomSheet.value = false
+}
+
+const onClickChapterItem = (chapterId: number): void => {
+  console.log(`Clicked chapter item with ID: ${chapterId}`)
+
+  router.push({
+    name: 'educationTrainingChapter',
+    params: { id: chapterId.toString() }
+  })
+}
 
 </script>
 
 <style lang="scss" scoped>
 .q-header.page__header {
-  height: 180px;
+  height: 200px;
   overflow: hidden;
   z-index: 1;
 }
@@ -73,7 +93,7 @@ const router = useRouter()
   position: absolute;
   top: 0;
   width: 100%;
-  height: 180px;
+  height: 200px;
   padding-top: 50px;
   z-index: 1;
 }
@@ -96,12 +116,12 @@ const router = useRouter()
 }
 .educationTrainingCourse__content {
   position: relative;
-  padding: 20px 40px;
+  padding: 0 40px 20px 40px;
 }
 
 .content__upperEdge {
   position: absolute;
-  height: 30px;
+  height: 50px;
   top: 151px; //避免某些畫面上會有1px隙縫露出
   width: 100%;
   background-color: $SystemGray;
@@ -111,7 +131,7 @@ const router = useRouter()
 .content__courseImage {
   position: absolute;
   left: 40px;
-  top: -30px;
+  bottom: 0px;
   width: 80px;
   height: 80px;
   background-image: url('@/assets/educationTraining/item_preparation.png');
