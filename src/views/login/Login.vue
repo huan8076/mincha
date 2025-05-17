@@ -107,6 +107,7 @@ const onLogin = async (): Promise<void> => {
 
 <style lang="scss" scoped>
 #login {
+  max-width: 100vw; //登入頁最大寬度調整
   background-color: $SystemPrimary;
   display: flex;
   justify-content: center;

@@ -13,7 +13,6 @@ input::placeholder {
 
 body {
   width: 100%;
-  max-width: 768px;
   min-height: 100dvh;
   margin: 0 auto;
   background-color: #fff;
@@ -25,9 +24,15 @@ body {
   margin: 0 auto;
 }
 
+.q-layout {
+  margin: 0 auto;
+}
+
 .q-page-container {
   position: relative;
+  margin: auto;
   width: 100%;
+  max-width: 768px;
   height: 100vh;
   background-color: $SystemGray;
   overflow: auto;
