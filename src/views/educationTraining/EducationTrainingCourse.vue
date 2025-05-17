@@ -55,9 +55,11 @@
 </template>
 
 <script setup lang="ts">
-import { useRouter } from 'vue-router'
+import { useRouter, useRoute } from 'vue-router'
 import EducationTrainingCoursePopup from './components/EducationTrainingCoursePopup.vue'
 const router = useRouter()
+const route = useRoute()
+const courseId = route.params.courseId as string // 確保 courseId 是字串型別
 
 const showBottomSheet = ref(false)
 
@@ -65,12 +67,13 @@ const onCloseDialog = (): void => {
   showBottomSheet.value = false
 }
 
-const onClickChapterItem = (chapterId: number): void => {
-  console.log(`Clicked chapter item with ID: ${chapterId}`)
+// chpaterIndex 章節步驟
+const onClickChapterItem = (chpaterIndex: number): void => {
+  console.log(`Clicked chapter item with Index: ${chpaterIndex}`)
 
   router.push({
     name: 'educationTrainingChapter',
-    params: { id: chapterId.toString() }
+    params: { courseId, index: chpaterIndex.toString() }
   })
 }
 

@@ -51,8 +51,8 @@ const onClose = (): void => {
   emit('close')
 }
 
-const onClickChapterItem = (chpaterId: number): void => {
-  emit('clickChapterItem', chpaterId)
+const onClickChapterItem = (chpaterIndex: number): void => {
+  emit('clickChapterItem', chpaterIndex)
 }
 
 </script>

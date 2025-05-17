@@ -1,0 +1,33 @@
+.btn {
+  min-width: 120px;
+  height: 44px;
+  border-radius:4px;
+  line-height: 42px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+
+  &:active {
+    opacity: 0.8;
+  }
+
+  &.btn-Filled { //實心按鈕
+    background: $SystemYellow;
+    color: #FFF;
+    border: 2px solid $SystemYellow;
+
+  }
+
+  &.btn-Outline { //空心含邊框按鈕
+    background: transparent;
+    border: 2px solid $SystemYellow;
+    color: $SystemYellow;
+  }
+
+  &.btn-Rounded {
+		//按鈕橢圓
+		border-radius: 50em;
+	}
+
+}

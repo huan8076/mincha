@@ -82,7 +82,7 @@ const courseList = ref([
 const onCourseItemClick = (id: number) => {
   router.push({
     name: 'educationTrainingCourse',
-    params: { id: id.toString() }
+    params: { courseId: id.toString() }
   })
 }
 

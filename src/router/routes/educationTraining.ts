@@ -17,12 +17,12 @@ const route: RouteRecordRaw[] = [
         component: async () => await import('@/views/educationTraining/EducationTrainingList.vue')
       },
       {
-        path: 'course/:id',
+        path: 'course/:courseId',
         name: 'educationTrainingCourse',
         component: async () => await import('@/views/educationTraining/EducationTrainingCourse.vue')
       },
       {
-        path: 'chapter',
+        path: 'chapter/:courseId/:index?',
         name: 'educationTrainingChapter',
         component: async () => await import('@/views/educationTraining/EducationTrainingChapter.vue')
       }
