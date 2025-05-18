@@ -10,7 +10,7 @@
 
     <q-item-section>
       <q-item-label class="trainingItem__title q-mb-md ">
-        {{ itemData.title }}
+        {{ itemData.course }}
       </q-item-label>
       <q-item-label class="trainingItem__Desc" lines="2">
         {{ itemData.description }}
@@ -28,7 +28,7 @@
 // 定義 itemData 的型別
 interface ItemData {
   id: number
-  title: string
+  course: string
   description: string
   completed: boolean
   image: string

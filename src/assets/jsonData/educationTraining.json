@@ -1,0 +1,165 @@
+[
+  {
+    "id": 1,
+    "course": "備料",
+    "description": "新手訓練課程，讓你快速上手",
+    "courseNote": "本課程涵蓋門市日常備料流程的標準操作，確保每一項配料品質穩定並符合食品安全規範。",
+    "completed": false,
+    "image": "educationTraining/item_preparation.png",
+    "chapterList": [
+      {
+        "id": 1,
+        "chapter": "冬瓜",
+        "stepList": [
+          {
+            "id": 1,
+            "step": "冬瓜煮熱水量比例是否正確？",
+            "description": "確認熱水量是否符合標準比例。",
+            "image": ""
+          },
+          {
+            "id": 2,
+            "step": "冬瓜塊比例是否正確並平放",
+            "description": "確保冬瓜塊大小均勻並平整放置。",
+            "image": ""
+          },
+          {
+            "id": 3,
+            "step": "冬瓜煮製功率是否正確？3500w轉1500",
+            "description": "確認煮製過程中功率調整是否正確。",
+            "image": ""
+          },
+          {
+            "id": 4,
+            "step": "是否確實蓋上鍋蓋",
+            "description": "檢查鍋蓋是否完全蓋好避免熱氣外洩。",
+            "image": ""
+          },
+          {
+            "id": 5,
+            "step": "冬瓜煮製時間是否為5分鐘",
+            "description": "確認煮製時間是否精確為5分鐘。",
+            "image": ""
+          },
+          {
+            "id": 6,
+            "step": "是否確認有無未融化冬瓜塊？如有未融化需以每次1分鐘加熱至完全溶",
+            "description": "檢查是否有未融化的冬瓜塊並適當加熱。",
+            "image": ""
+          },
+          {
+            "id": 7,
+            "step": "是否使用濾網過濾冬瓜肉",
+            "description": "使用濾網過濾以去除冬瓜殘渣。",
+            "image": ""
+          },
+          {
+            "id": 8,
+            "step": "是否有將冰塊加入至百合壺5000ml的位置？",
+            "description": "確認冰塊加入至指定的5000ml位置。",
+            "image": ""
+          },
+          {
+            "id": 9,
+            "step": "是否將冰塊攪拌至融化完全？",
+            "description": "確保冰塊完全融化並均勻攪拌。",
+            "image": ""
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "chapter": "珍珠備料",
+        "stepList": []
+      },
+      {
+        "id": 3,
+        "chapter": "蜜糖水",
+        "stepList": []
+      },
+      {
+        "id": 4,
+        "chapter": "焦糖製作",
+        "stepList": []
+      },
+      {
+        "id": 5,
+        "chapter": "寒天凍",
+        "stepList": []
+      },
+      {
+        "id": 6,
+        "chapter": "奶蓋系列",
+        "stepList": []
+      },
+      {
+        "id": 7,
+        "chapter": "杏仁麻糬",
+        "stepList": []
+      },
+      {
+        "id": 8,
+        "chapter": "Q咖",
+        "stepList": []
+      },
+      {
+        "id": 9,
+        "chapter": "手泡茶",
+        "stepList": []
+      },
+      {
+        "id": 10,
+        "chapter": "茶機煮茶",
+        "stepList": []
+      },
+      {
+        "id": 11,
+        "chapter": "冷泡綠茶",
+        "stepList": []
+      },
+      {
+        "id": 12,
+        "chapter": "命定奶茶",
+        "stepList": []
+      },
+      {
+        "id": 13,
+        "chapter": "鐵乃",
+        "stepList": []
+      },
+      {
+        "id": 14,
+        "chapter": "基本備料概念",
+        "stepList": []
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "course": "櫃檯",
+    "description": "進階訓練課程，讓你更上一層樓",
+    "completed": false,
+    "image": "educationTraining/item_counter.png"
+  },
+  {
+    "id": 3,
+    "course": "開店＆閉店",
+    "description": "專業訓練課程，讓你成為行業專家",
+    "completed": false,
+    "image": "educationTraining/item_open_close.png"
+  },
+  {
+    "id": 4,
+    "course": "飲品",
+    "description": "高級訓練課程，讓你成為行業領袖",
+    "completed": false,
+    "image": "educationTraining/item_beverage.png"
+  },
+  {
+    "id": 5,
+    "course": "試吃",
+    "description": "專家訓練課程，讓你成為行業大師",
+    "completed": false,
+    "image": "educationTraining/item_tasting.png"
+  }
+]

@@ -35,40 +35,48 @@
 <script setup lang="ts">
 import { useRouter } from 'vue-router'
 import EducationTrainingItem from './components/EducationTrainingItem.vue'
+// import educationTrainingData from '@/assets/jsonData/educationTraining.json'
+
 const router = useRouter()
+
+/**
+ * 課程清單資料
+ */
+// const courseList = ref(educationTrainingData)
+// console.log(courseList.value)
 
 const courseList = ref([
   {
     id: 1,
-    title: '備料',
+    course: '備料',
     description: '新手訓練課程，讓你快速上手',
     completed: true,
     image: new URL('@/assets/images/educationTraining/item_preparation.png', import.meta.url).href
   },
   {
     id: 2,
-    title: '櫃檯',
+    course: '櫃檯',
     description: '進階訓練課程，讓你更上一層樓',
     completed: true,
     image: new URL('@/assets/images/educationTraining/item_counter.png', import.meta.url).href
   },
   {
     id: 3,
-    title: '開店＆閉店',
+    course: '開店＆閉店',
     description: '專業訓練課程，讓你成為行業專家',
     completed: false,
     image: new URL('@/assets/images/educationTraining/item_open_close.png', import.meta.url).href
   },
   {
     id: 4,
-    title: '飲品',
+    course: '飲品',
     description: '高級訓練課程，讓你成為行業領袖',
     completed: false,
     image: new URL('@/assets/images/educationTraining/item_beverage.png', import.meta.url).href
   },
   {
     id: 5,
-    title: '試吃',
+    course: '試吃',
     description: '專家訓練課程，讓你成為行業大師',
     completed: false,
     image: new URL('@/assets/images/educationTraining/item_tasting.png', import.meta.url).href

@@ -8,7 +8,7 @@
       <div class="page__header__edge">
         <div class="page__header__edge__content">
           <p class="page__header__edge__title">
-            備料
+            {{ courseData.course }}
           </p>
         </div>
         <img src="@/assets/images/educationTraining/educationTraining_top_img.png" class="page__header__edge__image" alt="login background" />
@@ -19,10 +19,10 @@
     </div>
     <div class="educationTrainingCourse__content page">
       <p class="content__intro">
-        本課程涵蓋門市日常備料流程的標準操作，確保每一項配料品質穩定並符合食品安全規範。
+        {{ courseData.courseNote }}
       </p>
       <p class="content__stepIntro">
-        冬瓜 / 珍珠備料 / 蜜糖水/ 焦糖製作 / 寒天凍 / 奶蓋系列 / 杏仁麻糬 / Q咖 / 手泡茶 / 茶機煮茶 / 冷泡綠茶 / 命定奶茶 / 鐵奶 / 基本備料觀念
+        {{ resolvedStepString }}
       </p>
       <div class="content__course">
         <p class="content__course__title">
@@ -49,7 +49,7 @@
     </div>
 
     <q-dialog v-model="showBottomSheet" allow-focus-outside maximized position="bottom">
-      <education-training-course-popup @close="onCloseDialog" @click-chapter-item="onClickChapterItem" />
+      <education-training-course-popup :chapter-list="chapterList" @close="onCloseDialog" @click-chapter-item="onClickChapterItem" />
     </q-dialog>
   </q-page-container>
 </template>
@@ -57,10 +57,27 @@
 <script setup lang="ts">
 import { useRouter, useRoute } from 'vue-router'
 import EducationTrainingCoursePopup from './components/EducationTrainingCoursePopup.vue'
+import educationTrainingData from '@/assets/jsonData/educationTraining.json'
+
 const router = useRouter()
 const route = useRoute()
-const courseId = route.params.courseId as string // 確保 courseId 是字串型別
+const courseId = route.params.courseId as string
+const courseData = ref(educationTrainingData.find((course) => course.id === Number(courseId)))
 
+const resolvedStepString = computed((): string => {
+  // 確保 courseData 和 chapterList 存在
+  if (!courseData.value || !courseData.value.chapterList) {
+    return ''
+  }
+
+  // 從 chapterList 中提取 chapter 欄位並拼接
+  return courseData.value.chapterList
+    .map(chapter => chapter.chapter) // 提取 chapter 欄位
+    .filter(Boolean) // 過濾掉空值或 undefined
+    .join(' / ') // 使用 " / " 拼接
+})
+
+const chapterList = courseData.value?.chapterList ?? [] // 章節列表
 const showBottomSheet = ref(false)
 
 const onCloseDialog = (): void => {
@@ -68,12 +85,12 @@ const onCloseDialog = (): void => {
 }
 
 // chpaterIndex 章節步驟
-const onClickChapterItem = (chpaterIndex: number): void => {
-  console.log(`Clicked chapter item with Index: ${chpaterIndex}`)
+const onClickChapterItem = (chapterId: number): void => {
+  console.log(`Clicked chapter item with Index: ${chapterId}`)
 
   router.push({
     name: 'educationTrainingChapter',
-    params: { courseId, index: chpaterIndex.toString() }
+    params: { courseId, chapterId: chapterId.toString() }
   })
 }
 

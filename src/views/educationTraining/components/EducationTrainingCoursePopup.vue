@@ -6,35 +6,13 @@
     </div>
     <div class="educationTrainingCoursePopup__content page">
       <q-list>
-        <q-item clickable @click="onClickChapterItem(1)">
-          冬瓜
-        </q-item>
-        <q-item clickable>
-          珍珠備料
-        </q-item>
-        <q-item clickable>
-          蜜糖水
-        </q-item>
-        <q-item clickable>
-          焦糖製作
-        </q-item>
-        <q-item clickable>
-          寒天凍
-        </q-item>
-        <q-item clickable>
-          冬瓜
-        </q-item>
-        <q-item clickable>
-          珍珠備料
-        </q-item>
-        <q-item clickable>
-          蜜糖水
-        </q-item>
-        <q-item clickable>
-          焦糖製作
-        </q-item>
-        <q-item clickable>
-          寒天凍
+        <q-item
+          v-for="chapter in chapterList"
+          :key="chapter.id"
+          clickable
+          @click="onClickChapterItem(chapter.id)"
+        >
+          {{ chapter.chapter }}
         </q-item>
       </q-list>
     </div>
@@ -42,17 +20,24 @@
 </template>
 
 <script setup lang="ts">
-import { defineEmits } from 'vue'
+import { defineEmits, defineProps } from 'vue'
 
-// 定義 emit 事件
+interface Chapter {
+  id: number
+  chapter: string
+}
+
+defineProps<{
+  chapterList: Chapter[]
+}>()
+
 const emit = defineEmits(['close', 'clickChapterItem'])
-
 const onClose = (): void => {
   emit('close')
 }
 
-const onClickChapterItem = (chpaterIndex: number): void => {
-  emit('clickChapterItem', chpaterIndex)
+const onClickChapterItem = (chpaterId: number): void => {
+  emit('clickChapterItem', chpaterId)
 }
 
 </script>
