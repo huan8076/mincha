@@ -2,7 +2,7 @@
   <q-page-container id="login">
     <div class="login__content page">
       <div class="login__topArea">
-        <img src="@/assets/login/login_top_img.png" alt="login background" />
+        <img src="@/assets/images/login/login_top_img.png" alt="login background" />
       </div>
       <div class="login__inputArea">
         <div class="login__inputArea__slogan">

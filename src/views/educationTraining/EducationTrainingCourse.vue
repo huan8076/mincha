@@ -11,7 +11,7 @@
             備料
           </p>
         </div>
-        <img src="@/assets/educationTraining/educationTraining_top_img.png" class="page__header__edge__image" alt="login background" />
+        <img src="@/assets/images/educationTraining/educationTraining_top_img.png" class="page__header__edge__image" alt="login background" />
       </div>
     </q-header>
     <div class="content__upperEdge">
@@ -30,15 +30,15 @@
         </p>
         <div class="content__course__list">
           <div class="content__course__item">
-            <img src="@/assets/educationTraining/default-user.png" alt="">
+            <img src="@/assets/images/educationTraining/default-user.png" alt="">
             <p>20 小時教學影片</p>
           </div>
           <div class="content__course__item">
-            <img src="@/assets/educationTraining/default-user.png" alt="">
+            <img src="@/assets/images/educationTraining/default-user.png" alt="">
             <p>10 篇圖文說明教材</p>
           </div>
           <div class="content__course__item">
-            <img src="@/assets/educationTraining/default-user.png" alt="">
+            <img src="@/assets/images/educationTraining/default-user.png" alt="">
             <p>50 項實作檢核練習</p>
           </div>
         </div>
@@ -137,7 +137,7 @@ const onClickChapterItem = (chpaterIndex: number): void => {
   bottom: 0px;
   width: 80px;
   height: 80px;
-  background-image: url('@/assets/educationTraining/item_preparation.png');
+  background-image: url('@/assets/images/educationTraining/item_preparation.png');
   background-size: cover;
   background-position: center;
 }

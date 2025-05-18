@@ -15,7 +15,7 @@
             #新手等級
           </div>
         </div>
-        <img src="@/assets/educationTraining/educationTraining_top_img.png" class="page__header__edge__image" alt="login background" />
+        <img src="@/assets/images/educationTraining/educationTraining_top_img.png" class="page__header__edge__image" alt="login background" />
       </div>
     </q-header>
     <div class="educationTrainingList__content page">
@@ -43,35 +43,35 @@ const courseList = ref([
     title: '備料',
     description: '新手訓練課程，讓你快速上手',
     completed: true,
-    image: new URL('@/assets/educationTraining/item_preparation.png', import.meta.url).href
+    image: new URL('@/assets/images/educationTraining/item_preparation.png', import.meta.url).href
   },
   {
     id: 2,
     title: '櫃檯',
     description: '進階訓練課程，讓你更上一層樓',
     completed: true,
-    image: new URL('@/assets/educationTraining/item_counter.png', import.meta.url).href
+    image: new URL('@/assets/images/educationTraining/item_counter.png', import.meta.url).href
   },
   {
     id: 3,
     title: '開店＆閉店',
     description: '專業訓練課程，讓你成為行業專家',
     completed: false,
-    image: new URL('@/assets/educationTraining/item_open_close.png', import.meta.url).href
+    image: new URL('@/assets/images/educationTraining/item_open_close.png', import.meta.url).href
   },
   {
     id: 4,
     title: '飲品',
     description: '高級訓練課程，讓你成為行業領袖',
     completed: false,
-    image: new URL('@/assets/educationTraining/item_beverage.png', import.meta.url).href
+    image: new URL('@/assets/images/educationTraining/item_beverage.png', import.meta.url).href
   },
   {
     id: 5,
     title: '試吃',
     description: '專家訓練課程，讓你成為行業大師',
     completed: false,
-    image: new URL('@/assets/educationTraining/item_tasting.png', import.meta.url).href
+    image: new URL('@/assets/images/educationTraining/item_tasting.png', import.meta.url).href
   }
 ])
 

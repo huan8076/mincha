@@ -10,7 +10,7 @@
     </q-header>
     <div class="educationTrainingChapter__content page">
       <div class="content__image">
-        <img src="@/assets/login/login_top_img.png" />
+        <img src="@/assets/images/login/login_top_img.png" />
       </div>
       <div class="content__wrapper">
         <div class="content__step" @click="showStep = true">

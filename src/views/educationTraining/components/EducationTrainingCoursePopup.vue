@@ -75,7 +75,7 @@ const onClickChapterItem = (chpaterIndex: number): void => {
   bottom: 0px;
   width: 80px;
   height: 80px;
-  background-image: url('@/assets/educationTraining/item_preparation.png');
+  background-image: url('@/assets/images/educationTraining/item_preparation.png');
   background-size: cover;
   background-position: center;
 }
