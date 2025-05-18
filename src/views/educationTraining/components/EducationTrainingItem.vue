@@ -18,7 +18,7 @@
     </q-item-section>
 
     <q-item-section side center>
-      <q-icon name="check_circle" :class="itemData.completed ? 'trainingItem__status--completed': 'trainingItem__status--uncompleted'" />
+      <q-icon name="check_circle" size="34px" :class="itemData.completed ? 'trainingItem__status--completed': 'trainingItem__status--uncompleted'" />
     </q-item-section>
   </q-item>
 </template>
@@ -51,7 +51,8 @@ const { itemData } = defineProps<{ itemData: ItemData }>()
 
 .trainingItem__title {
   font-size: 20px;
-  color: $SystemPrimary;
+  font-weight: bold;
+  color: #2957ff;
 }
 
 .trainingItem__status--completed {
