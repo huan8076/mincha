@@ -11,7 +11,7 @@
             備料
           </p>
         </div>
-        <img src="@/assets/login/exampleBG.png" class="page__header__edge__image" alt="login background" />
+        <img src="@/assets/educationTraining/educationTraining_top_img.png" class="page__header__edge__image" alt="login background" />
       </div>
     </q-header>
     <div class="content__upperEdge">
@@ -115,7 +115,7 @@ const onClickChapterItem = (chpaterIndex: number): void => {
   position: absolute;
   height: 150px;
   right: 0;
-  bottom: 0;
+  bottom: 20px;
 }
 .educationTrainingCourse__content {
   position: relative;

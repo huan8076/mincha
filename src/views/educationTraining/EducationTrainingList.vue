@@ -15,7 +15,7 @@
             #新手等級
           </div>
         </div>
-        <img src="@/assets/login/exampleBG.png" class="page__header__edge__image" alt="login background" />
+        <img src="@/assets/educationTraining/educationTraining_top_img.png" class="page__header__edge__image" alt="login background" />
       </div>
     </q-header>
     <div class="educationTrainingList__content page">

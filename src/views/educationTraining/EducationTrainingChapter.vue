@@ -13,7 +13,7 @@
         <img src="@/assets/login/login_top_img.png" />
       </div>
       <div class="content__wrapper">
-        <div class="content__step">
+        <div class="content__step" @click="showStep = true">
           <p>
             全步驟(11)
           </p>
@@ -46,11 +46,21 @@
       </div>
     </div>
   </q-page-container>
+  <q-dialog v-model="showStep" allow-focus-outside maximized position="bottom">
+    <education-training-chapter-step @close="onCloseDialog" />
+  </q-dialog>
 </template>
 
 <script setup lang="ts">
 import { useRouter } from 'vue-router'
+import EducationTrainingChapterStep from './components/EducationTrainingChapterStep.vue'
 const router = useRouter()
+
+const showStep = ref(false)
+
+const onCloseDialog = (): void => {
+  showStep.value = false
+}
 </script>
 
 <style lang="scss" scoped>
@@ -79,6 +89,7 @@ const router = useRouter()
   top: -12px;
   right: 5px;
   padding: 4px;
+  cursor: pointer;
 
   p {
     padding: 4px 0;
