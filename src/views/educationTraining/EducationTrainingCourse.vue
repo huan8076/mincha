@@ -8,7 +8,7 @@
       <div class="page__header__edge">
         <div class="page__header__edge__content">
           <p class="page__header__edge__title">
-            {{ courseData.course }}
+            {{ courseData?.course ?? '' }}
           </p>
         </div>
         <img src="@/assets/images/educationTraining/educationTraining_top_img.png" class="page__header__edge__image" alt="login background" />
@@ -19,7 +19,7 @@
     </div>
     <div class="educationTrainingCourse__content page">
       <p class="content__intro">
-        {{ courseData.courseNote }}
+        {{ courseData?.courseNote ?? '' }}
       </p>
       <p class="content__stepIntro">
         {{ resolvedStepString }}
