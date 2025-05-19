@@ -62,7 +62,7 @@ import { Course } from '@/types/EducationTrainingTypes'
 
 const router = useRouter()
 const route = useRoute()
-const courseId = route.params.courseId as string
+const courseId = Number(route.params.courseId)
 const courseData = ref<Course | undefined>(
   educationTrainingData.find((course) => course.id === Number(courseId))
 )
@@ -93,7 +93,7 @@ const onClickChapterItem = (chapterId: number): void => {
 
   router.push({
     name: 'educationTrainingChapter',
-    params: { courseId, chapterId: chapterId.toString() }
+    params: { courseId: courseId.toString(), chapterId: chapterId.toString() }
   })
 }
 
