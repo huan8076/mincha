@@ -58,11 +58,14 @@
 import { useRouter, useRoute } from 'vue-router'
 import EducationTrainingCoursePopup from './components/EducationTrainingCoursePopup.vue'
 import educationTrainingData from '@/assets/jsonData/educationTraining.json'
+import { Course } from '@/types/EducationTrainingTypes'
 
 const router = useRouter()
 const route = useRoute()
 const courseId = route.params.courseId as string
-const courseData = ref(educationTrainingData.find((course) => course.id === Number(courseId)))
+const courseData = ref<Course | undefined>(
+  educationTrainingData.find((course) => course.id === Number(courseId))
+)
 
 const resolvedStepString = computed((): string => {
   // 確保 courseData 和 chapterList 存在
