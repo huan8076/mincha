@@ -15,7 +15,7 @@
       <div class="content__wrapper">
         <div class="content__step" @click="showStep = true">
           <p>
-            {{ `全步驟(${chapterData?.stepList.length})` }}
+            全步驟({{ chapterData?.stepList.length }})
           </p>
         </div>
         <div class="content__index">
@@ -43,7 +43,11 @@
     </div>
   </q-page-container>
   <q-dialog v-model="showStep" allow-focus-outside maximized position="bottom">
-    <education-training-chapter-step @close="onCloseDialog" />
+    <education-training-chapter-step
+      :step-index="stepIndex"
+      :step-list="chapterData?.stepList ?? []"
+      @close="onCloseDialog"
+    />
   </q-dialog>
 </template>
 

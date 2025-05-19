@@ -3,35 +3,23 @@
     <div class="header">
       <q-toolbar>
         <q-toolbar-title class="text-left step__title">
-          全步驟(11)
+          全步驟({{ stepList.length }})
         </q-toolbar-title>
         <q-icon name="close" size="38px" @click="onClose" />
       </q-toolbar>
     </div>
     <div class="educationTrainingChapterStep__content">
       <div class="step__list">
-        <div class="step__item step__item--active">
+        <div
+          v-for="(step, index) in stepList"
+          :key="step.id"
+          :class="['step__item', { 'step__item--active': index <= stepIndex }]"
+        >
           <div class="step__item__indexLine">
-            01
+            {{ index + 1 }}
           </div>
           <div class="step__item__text">
-            冬瓜煮熱水量比例是否正確
-          </div>
-        </div>
-        <div class="step__item">
-          <div class="step__item__indexLine">
-            02
-          </div>
-          <div class="step__item__text">
-            冬瓜比例是否正確並平放？
-          </div>
-        </div>
-        <div class="step__item">
-          <div class="step__item__indexLine">
-            03
-          </div>
-          <div class="step__item__text">
-            冬瓜煮製功率是否正確？ 3500w轉1500w
+            {{ step.step }}
           </div>
         </div>
       </div>
@@ -40,9 +28,13 @@
 </template>
 
 <script setup lang="ts">
-import { defineEmits } from 'vue'
+import { defineProps, defineEmits } from 'vue'
+import { Step } from '@/types/EducationTrainingTypes'
 
-// 定義 emit 事件
+defineProps<{
+  stepIndex: number
+  stepList: Step[]
+}>()
 const emit = defineEmits(['close'])
 
 const onClose = (): void => {
