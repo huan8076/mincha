@@ -48,6 +48,7 @@
 <script setup lang="ts">
 import { useRouter } from 'vue-router'
 import { useQuasar } from 'quasar'
+import type { LoginResponse } from '@/api/mincha/model/Auth'
 import { Login } from '@/api/mincha'
 
 const $q = useQuasar()
@@ -69,9 +70,9 @@ const validatePhoneNumber = (val: string): boolean | string => {
  * 密碼長度至少為 12 碼，且必須包含一個大寫字母、一個小寫字母和一個數字
  */
 const validatePassword = (val: string): boolean | string => {
-  return true
-  // const regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[A-Za-z\d]{12,}$/
-  // return regex.test(val) || '密碼格式有誤'
+  if (val) return true // 暫時不檢查格式
+  const regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[A-Za-z\d]{12,}$/
+  return regex.test(val) || '密碼格式有誤'
 }
 
 /**
@@ -96,7 +97,7 @@ const onLogin = async (): Promise<void> => {
       username: account.value,
       password: password.value
     }
-    const { data, error } = await Login(loginData)
+    const { data, error } = await Login<LoginResponse>(loginData)
     if (data) {
       const userData = {
         userName: data.username,

@@ -1,17 +1,17 @@
 import axios, { AxiosInstance } from 'axios'
 import { ApiRequest, ApiResponse } from './Model'
-import { type CamelCase, toCamelCase } from '@/utils/bff'
+// import { type CamelCase, toCamelCase } from '@/utils/bff'
 import { sleep } from '@/utils/index'
 
 export const requestApi = async<T>(
   axiosInstance: AxiosInstance,
   config: ApiRequest,
   isUseCommonInterceptors = true
-): Promise<ApiResponse<CamelCase<T>>> => {
+): Promise<ApiResponse<T>> => {
   try {
     if (isUseCommonInterceptors) setCommonInterceptors(axiosInstance, config)
     const response = await axiosInstance.request<T>(config)
-    return { data: toCamelCase<T>(response.data), error: null, status: response.status }
+    return { data: response.data, error: null, status: response.status }
   } catch (error) {
     if (axios.isAxiosError(error)) {
       return { data: null, error, status: error.status ?? 500 }

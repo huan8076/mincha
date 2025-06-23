@@ -121,8 +121,8 @@
 <script setup lang="ts">
 const router = useRouter()
 
-const username = ref<string>('')
-username.value = localStorage.getItem('loginData') ? JSON.parse(localStorage.getItem('loginData')).userName : '訪客'
+const loginData = localStorage.getItem('loginData')
+const username = ref<string>(loginData ? JSON.parse(loginData).userName : '')
 
 /**
  * 登出功能
