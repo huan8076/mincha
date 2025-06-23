@@ -22,5 +22,3 @@ export interface ApiFailResponse {
 }
 
 export type ApiResponse<T> = ApiSuccessResponse<T> | ApiFailResponse
-
-export type kingnetAuth = null | 'CommunityUserToken' | 'CommunityUserTokenOrAnonymous' | 'CommunityUser'

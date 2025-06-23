@@ -14,7 +14,7 @@
       <q-toolbar class="index__header__edge">
         <q-toolbar-title>
           <p>Good Morning</p>
-          <p>Huan!</p>
+          <p>{{ username }}!</p>
         </q-toolbar-title>
       </q-toolbar>
     </q-header>
@@ -120,6 +120,9 @@
 
 <script setup lang="ts">
 const router = useRouter()
+
+const username = ref<string>('')
+username.value = localStorage.getItem('loginData') ? JSON.parse(localStorage.getItem('loginData')).userName : '訪客'
 
 /**
  * 登出功能

@@ -48,6 +48,7 @@
 <script setup lang="ts">
 import { useRouter } from 'vue-router'
 import { useQuasar } from 'quasar'
+import { Login } from '@/api/mincha'
 
 const $q = useQuasar()
 const account = ref<string>('')
@@ -68,8 +69,9 @@ const validatePhoneNumber = (val: string): boolean | string => {
  * 密碼長度至少為 12 碼，且必須包含一個大寫字母、一個小寫字母和一個數字
  */
 const validatePassword = (val: string): boolean | string => {
-  const regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[A-Za-z\d]{12,}$/
-  return regex.test(val) || '密碼格式有誤'
+  return true
+  // const regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[A-Za-z\d]{12,}$/
+  // return regex.test(val) || '密碼格式有誤'
 }
 
 /**
@@ -91,13 +93,30 @@ const onLogin = async (): Promise<void> => {
 
     // 將帳號與密碼儲存到 localStorage 的 loginData 欄位
     const loginData = {
-      account: account.value,
+      username: account.value,
       password: password.value
     }
-    localStorage.setItem('loginData', JSON.stringify(loginData))
+    const { data, error } = await Login(loginData)
+    if (data) {
+      const userData = {
+        userName: data.username,
+        userPhone: loginData.username,
+        token: data.token
+      }
 
-    // 跳轉到首頁
-    await router.push('/')
+      localStorage.setItem('loginData', JSON.stringify(userData))
+      // 跳轉到首頁
+      await router.push('/')
+    }
+
+    if (error) {
+      $q.notify({
+        type: 'warning',
+        message: '登入失敗，請檢查帳號或密碼',
+        position: 'top',
+        timeout: 2000
+      })
+    }
   } catch (error) {
     // 錯誤處理，這裡可以使用 Quasar 的通知元件顯示錯誤訊息
     console.error('登入失敗:', error)
